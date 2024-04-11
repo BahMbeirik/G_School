@@ -1,0 +1,40 @@
+.search{
+    width: 300px;
+    height: 30px;
+    /* top: 21px; */
+    margin-left: 40px;
+    border-radius: 5px;
+    border: 1px  solid #0052B4;
+    font-size: 0.7rem;
+    padding-left: 50px;
+}
+.InconS{
+    position: absolute;
+    left: 23%;
+    margin-top: 7px;
+    height: 20px;
+}
+.image_user{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px  solid #0052B4;
+    position: absolute;
+    right: 1%;
+}
+.stting{
+    position: absolute;
+    right: 5.3%;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.notif{
+    position: absolute;
+    right: 8%;
+    margin-top: 6px;
+    cursor: pointer;
+}
+.ph{
+    margin: 15px 0px 15px 0px;
+}

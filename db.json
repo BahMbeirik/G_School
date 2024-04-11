@@ -1,0 +1,129 @@
+{
+  "stutent": [
+    {
+      "firstName": "Bah MK",
+      "phone": 31227857,
+      "adress": "Lksar",
+      "email": "Bah@gmail.com",
+      "id": "841e"
+    },
+    {
+      "id": "5d36",
+      "firstName": "Fatema",
+      "phone": 54545454,
+      "adress": "TVZ",
+      "email": "F@gmail.com"
+    },
+    {
+      "id": "5550",
+      "firstName": "Lala",
+      "phone": 65656564,
+      "adress": "Lksar",
+      "email": "L@gmail.com"
+    },
+    {
+      "id": "a18c",
+      "firstName": "Med BBH",
+      "phone": 43435354,
+      "adress": "Ain Talih",
+      "email": "MBBH@gmail.coom"
+    },
+    {
+      "id": "3009",
+      "firstName": "Med Salik",
+      "phone": 43434434,
+      "adress": "HS",
+      "email": "MS@gmail.com"
+    },
+    {
+      "id": "2ea4",
+      "firstName": "Bahah",
+      "phone": 41168885,
+      "adress": "Lksar",
+      "email": "Bahah@gmail.cm"
+    },
+    {
+      "firstName": "S",
+      "phone": 43,
+      "adress": "K",
+      "email": "lijuhib@mailinator.com",
+      "id": "ddf5"
+    }
+  ],
+  "prof": [
+    {
+      "id": "233",
+      "firstName": "Bahah BK",
+      "matier": "Angular",
+      "email": "Bahah@gmail.com"
+    },
+    {
+      "id": "2a2a",
+      "firstName": "Sidi Cheikh",
+      "matier": "React",
+      "email": "Sidi@gmail.com"
+    },
+    {
+      "id": "a62a",
+      "firstName": "Chama",
+      "matier": "Laravel",
+      "email": "Ch@gmail.com"
+    },
+    {
+      "id": "3c31",
+      "firstName": "Sidi Ali Med",
+      "matier": "Spring boot",
+      "email": "SAM@gmail.com"
+    },
+    {
+      "id": "acde",
+      "firstName": "Sara",
+      "matier": "Fluter",
+      "email": "SR@gmail.com"
+    },
+    {
+      "id": "6b8e",
+      "firstName": "Eje",
+      "matier": "Angular",
+      "email": "Eje@gmail.com"
+    },
+    {
+      "firstName": "Abdselame",
+      "matier": "Spring boot",
+      "email": "Ab@gmai.com",
+      "id": "8d01"
+    }
+  ],
+  "classe": [
+    {
+      "id": "C1",
+      "matier": "Technique de programmation",
+      "firstName": "BAHAH",
+      "heur": "17:30-19h30"
+    },
+    {
+      "id": "S13",
+      "matier": "programmation",
+      "firstName": "Ali",
+      "heur": "14:30-16h30"
+    },
+    {
+      "id": "3tc8",
+      "matier": "Angular",
+      "firstName": "Abdselame",
+      "heur": "16:30 - 18:30"
+    },
+    {
+      "id": "C14",
+      "matier": "Spring boot",
+      "firstName": "BAHAH",
+      "heur": "15:30-17h30"
+    },
+    {
+      "id": "4ec8",
+      "matier": "Angular",
+      "firstName": "Abdselame",
+      "heur": "17:30 - 19:30"
+    }
+  ]
+}

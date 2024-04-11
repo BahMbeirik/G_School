@@ -1,0 +1,54 @@
+.menu-link {
+    display: flex;
+    width: 100%;
+    padding: 10px 0px 10px 85px;
+    align-items: flex-start;
+    gap: 10.516px;
+    color: #2B2E48;
+    text-decoration: none; /* Remove underline */
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+.active {
+
+    width: 100%;
+
+    align-items: flex-start;
+
+
+    background: #0D6DDF;
+    color: #FFF;
+    font-size: 15px;
+    font-style: normal;
+  
+   position: relative;
+    border-radius: 2px;
+    line-height: normal;
+    letter-spacing: 0.16px;
+
+  border-left: 4px  solid #fff;
+}
+
+.smart{
+    margin: 30px 40px 30px 80px;
+    height: 40px;
+}
+.menu-title{
+    color: #FFF;
+    font-size: 20px;
+    font-family: jost;
+}
+
+.Nms{
+    margin-left: 40px;
+}
+
+.sign{
+    margin-bottom: 30px;
+}

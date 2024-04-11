@@ -1,0 +1,95 @@
+<div class="containerBD">
+  <div class="ls">
+    <p class="tit">Liste Des  Etudiants</p>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="modify">Ajouter</button>
+  </div>
+  
+  <table class="table table-responsive">
+      <thead>
+          <tr>
+              <th>Liste des profs</th>
+              <th>numéro de Téléphone</th>
+              <th>adresse</th>
+              <th>émail</th>
+              <th>action</th>
+          </tr>
+      </thead>
+      <tbody> 
+          <tr *ngFor="let std of students | paginate: { itemsPerPage: 5, currentPage: pages }">
+              <td><span><img class="image_user" src="..\..\..\..\assets\imanges\Avatar.png" alt="metronic"></span>{{std.firstName}}</td>
+              <td>{{std.phone}}</td>
+              <td>{{std.adress}}</td>
+              <td>{{std.email}}</td>
+              <td>
+                  <button class="bt1" (click)="updateForm(std)"><img src="..\..\..\..\assets\svg\Frame 52787.svg" alt="metronic"></button>
+                  <button class="bt2" (click)="delete(std)"><img src="..\..\..\..\assets\svg\🦆 icon _trash_.svg" alt="metronic"></button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  
+  <div class="pagination">
+      <pagination-controls previousLabel="" nextLabel="" (pageChange)="pages = $event"></pagination-controls>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <p class="pI" *ngIf="!showText">Ajouter un nouveau etudiant</p>
+                  <p class="pI" *ngIf="showText">Modifier L'etudiant</p>
+                  <form [formGroup]="profForm" (submit)="submitForm()">
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Nom</label>
+                      <input type="text" class="form-control" formControlName="firstName">
+                      <span
+                      *ngIf="profForm.controls['firstName'].invalid && (profForm.controls['firstName'].dirty || profForm.controls['firstName'].touched)">
+                      <span class="text-danger" *ngIf="profForm.controls?.['firstName']?.errors?.['required']">required
+                      </span>
+                      </span>
+                    </div>
+                    <div class="mb-3">
+                      <label for="name" class="form-label">TÉLÉPHONE</label>
+                      <input type="number" class="form-control" formControlName="phone" >
+                      <span
+                      *ngIf="profForm.controls['phone'].invalid && (profForm.controls['phone'].dirty || profForm.controls['phone'].touched)">
+                      <span class="text-danger" *ngIf="profForm.controls?.['phone']?.errors?.['required']">required</span>
+                      <span class="text-danger" *ngIf="profForm.controls?.['phone']?.errors?.['max']">numero incorrect
+              
+                      </span>
+                      
+                    </span>
+                    </div>
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Address</label>
+                      <input type="text" class="form-control" formControlName="adress">
+                      <span
+                      *ngIf="profForm.controls['adress'].invalid && (profForm.controls['adress'].dirty || profForm.controls['adress'].touched)">
+                      <span class="text-danger" *ngIf="profForm.controls?.['adress']?.errors?.['required']">required
+              
+                      </span>
+                    </span>
+                    </div>
+                    <div class="mb-3">
+                      <label for="" class="form-label">Email address</label>
+                      <input type="email" class="form-control" formControlName="email">
+                      <span
+                      *ngIf="profForm.controls['email'].invalid && (profForm.controls['email'].dirty || profForm.controls['email'].touched)">
+                      <span class="text-danger" *ngIf="profForm.controls?.['email']?.errors?.['required']">required</span>
+                      <span class="text-danger" *ngIf="profForm.controls?.['email']?.errors?.['email']">email incorrect
+              
+                      </span>
+                    </span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btnI" *ngIf="!showButton" [disabled]="profForm.invalid">Ajouter</button>
+                    <button type="submit" class="btn btn-primary btnI" *ngIf="showButton" [disabled]="profForm.invalid"> Modifer</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+

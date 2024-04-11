@@ -1,0 +1,111 @@
+<div class="containerBD">
+    <div class="ls">
+      <p class="tit">Liste Des Profs</p>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" id="modify" data-bs-target="#exampleModal">Ajouter</button>
+    </div>
+    
+
+    <table class="table table-responsive">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>matiére</th>
+            <th>émail</th>
+            <th>action</th>
+        </tr>
+       </thead>
+       <tbody > 
+      
+      <tr *ngFor="let prof of profs | paginate: { itemsPerPage: 5, currentPage: pages }">
+        <td><span><img class="image_user" src="..\..\..\..\assets\imanges\Avatar.png" alt="metronic"></span>{{prof.firstName}}</td>
+        <td>{{prof.matier}}</td>
+        <td>{{prof.email}}</td>
+        <td><button class="bt1" (click)="updateForm(prof)"><img  src="..\..\..\..\assets\svg\Frame 52787.svg" alt="metronic"></button>
+          <button class="bt2" (click)="delete(prof)"><img  src="..\..\..\..\assets\svg\🦆 icon _trash_.svg" alt="metronic"></button></td>
+      </tr>
+      
+     
+      </tbody>
+    </table>
+    <div class="pagination ">
+      <pagination-controls (pageChange)="pages = $event" ></pagination-controls>
+    </div>
+    
+    <!-- <nav aria-label="..." >
+      <ul class="pagination pagination-sm">
+        <li class="page-item ">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&lt;</span>
+          </a>
+        </li>
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">1</span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">5</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&gt;</span>
+          </a>
+        </li>
+      </ul>
+    </nav> -->
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> -->
+      <div class="modal-body">
+        <p class="pI" *ngIf="!showText">Ajouter un nouveau Profs</p>
+        <p class="pI" *ngIf="showText">Modifier  Le prof</p>
+        <form [formGroup]="profForm" (submit)="submitForm()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nom</label>
+            <input type="text" class="form-control"  formControlName="firstName">
+            <span
+            *ngIf="profForm.controls['firstName'].invalid && (profForm.controls['firstName'].dirty || profForm.controls['firstName'].touched)">
+            <span class="text-danger" *ngIf="profForm.controls?.['firstName']?.errors?.['required']">required
+            </span>
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">MATIER</label>
+            <input type="text" class="form-control"  formControlName="matier">
+            <span
+            *ngIf="profForm.controls['matier'].invalid && (profForm.controls['matier'].dirty || profForm.controls['matier'].touched)">
+            <span class="text-danger" *ngIf="profForm.controls?.['matier']?.errors?.['required']">required
+            </span>
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" formControlName="email">
+            <span
+            *ngIf="profForm.controls['email'].invalid && (profForm.controls['email'].dirty || profForm.controls['email'].touched)">
+            <span class="text-danger" *ngIf="profForm.controls?.['email']?.errors?.['required']">required</span>
+            <span class="text-danger" *ngIf="profForm.controls?.['email']?.errors?.['email']">email incorrect
+    
+            </span>
+          </span>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btnI" *ngIf="!showButton" [disabled]="profForm.invalid" >Ajouter</button>
+          <button type="submit" class="btn btn-primary btnI" *ngIf="showButton" [disabled]="profForm.invalid" > Modifer</button>
+        </form>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
